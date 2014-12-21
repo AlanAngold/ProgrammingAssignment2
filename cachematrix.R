@@ -11,6 +11,12 @@
 ##                   to minimize the number of times we have perform the
 ##                   runtime costly inversion process.
 makeCacheMatrix <- function(x = matrix()) {
+  
+  # Check to make sure the user given argument is a matrix
+  if(!is.matrix(x)){
+    stop("ERROR(makeCaceMatrix): Argument is *not* a matrix!")
+  }
+  
   InverseMatrix<-NULL
   # Set function to store copy of original matrix
   set <- function(givenMatrix) {
